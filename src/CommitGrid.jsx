@@ -6,7 +6,7 @@ const CommitGrid = ({ user, label }) => {
     const [commits, setCommits] = useState([]);
 
     const fetchCommits = async () => {
-        const { data } = await axios.get('http://localhost:5000/commits', { params: { user } });
+        const { data } = await axios.get('https://githubprogresstrackerapi.onrender.com/commits', { params: { user } });
         setCommits(data);
     };
 
@@ -20,7 +20,7 @@ const CommitGrid = ({ user, label }) => {
     }, [user]);
 
     const handleCommit = async () => {
-        await axios.post('http://localhost:5000/commit', { user });
+        await axios.post('https://githubprogresstrackerapi.onrender.com/commit', { user });
         fetchCommits(); // Fetch commits immediately after making a commit
     };
 
@@ -37,7 +37,10 @@ const CommitGrid = ({ user, label }) => {
     return (
         <div>
             <div className="commit-label">{label}</div>
-            <button onClick={handleCommit}>Commit</button>
+            <button onClick={handleCommit} style={{ margin: '10px' }}>Commit 25 Minutes of Work</button>
+            <p className="commit-explanation">
+                Each commit represents 25 minutes of focused work.
+            </p>
             <div className="grid-container">
                 <div></div> {/* Empty corner cell */}
                 {months.map((month, index) => (
