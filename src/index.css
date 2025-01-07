@@ -1,0 +1,51 @@
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f6f8fa;
+  margin: 0;
+  padding: 20px;
+}
+
+button {
+  background-color: #2ea44f;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: #22863a;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 40px repeat(52, 20px);
+  gap: 2px;
+  margin-top: 20px;
+}
+
+.grid-cell {
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.grid-header {
+  color: #586069;
+  font-weight: bold;
+  text-align: center;
+}
+
+.commit-label {
+  grid-column: 1 / span 53;
+  background-color: #fafbfc;
+  border: 1px solid #e1e4e8;
+  padding: 5px;
+  font-size: 16px;
+  color: #0366d6;
+  text-align: center;
+  font-weight: bold;
+}
